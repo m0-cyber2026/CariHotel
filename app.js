@@ -94,4 +94,150 @@ document.addEventListener("DOMContentLoaded", function () {
 
         ];
 
-        /* SORT
+        /* SORT HOTEL BY LOWEST PRICE */
+
+        hotels.sort(function (a, b) {
+            return Math.min(a.agoda, a.trip) - Math.min(b.agoda, b.trip);
+        });
+
+
+        hotelResults.innerHTML = `
+
+            <div class="search-summary">
+
+                <p>
+                    <strong>${destination}</strong>
+                </p>
+
+                <p>
+                    ${checkIn} → ${checkOut}
+                </p>
+
+                <p>
+                    ${guests} guest(s) · ${nights} night(s)
+                </p>
+
+            </div>
+
+        `;
+
+
+        hotels.forEach(function (hotel) {
+
+            const hotelCard = document.createElement("div");
+
+            hotelCard.className = "hotel-card";
+
+            const agodaTotal = hotel.agoda * nights;
+            const tripTotal = hotel.trip * nights;
+
+            const agodaIsCheaper = agodaTotal < tripTotal;
+            const tripIsCheaper = tripTotal < agodaTotal;
+
+
+            hotelCard.innerHTML = `
+
+                <div class="hotel-image">
+
+                    <img 
+                        src="${hotel.image}" 
+                        alt="${hotel.name}"
+                    >
+
+                </div>
+
+
+                <div class="hotel-info">
+
+                    <h3>
+                        ${hotel.name} ${destination}
+                    </h3>
+
+
+                    <div class="rating">
+                        ⭐ ${hotel.rating} · Excellent
+                    </div>
+
+
+                    <p class="location">
+                        📍 ${destination}
+                    </p>
+
+
+                    <div class="price-comparison">
+
+
+                        <div class="booking-option ${agodaIsCheaper ? "cheapest" : ""}">
+
+                            <span>Agoda</span>
+
+                            <strong>
+                                RM ${agodaTotal}
+                            </strong>
+
+                            <small>
+                                RM ${hotel.agoda} per night · ${nights} nights
+                            </small>
+
+
+                            <a 
+                                class="deal-button"
+                                href="${hotel.agodaLink}"
+                                target="_blank"
+                            >
+                                View Deal
+                            </a>
+
+
+                            ${agodaIsCheaper ? "<label>CHEAPER</label>" : ""}
+
+                        </div>
+
+
+
+                        <div class="booking-option ${tripIsCheaper ? "cheapest" : ""}">
+
+                            <span>Trip.com</span>
+
+                            <strong>
+                                RM ${tripTotal}
+                            </strong>
+
+                            <small>
+                                RM ${hotel.trip} per night · ${nights} nights
+                            </small>
+
+
+                            <a 
+                                class="deal-button"
+                                href="${hotel.tripLink}"
+                                target="_blank"
+                            >
+                                View Deal
+                            </a>
+
+
+                            ${tripIsCheaper ? "<label>CHEAPER</label>" : ""}
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            hotelResults.appendChild(hotelCard);
+
+        });
+
+
+        document.getElementById("resultsSection").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
