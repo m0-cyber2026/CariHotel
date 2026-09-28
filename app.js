@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
             hotelCard.innerHTML = `
 
                 <div class="hotel-image">
-                    🏨
-                </div>
+    <img src="${hotel.image}" alt="${hotel.name}">
+</div>
 
                 <div class="hotel-info">
 
