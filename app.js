@@ -141,9 +141,9 @@ const nights = Math.ceil(
 
                             <span>Trip.com</span>
 
-                            <strong>RM ${hotel.trip}</strong>
+                            <strong>RM ${hotel.trip * nights}</strong>
 
-                            <small>per night</small>
+<small>RM ${hotel.trip} per night · ${nights} nights</small>
 
                             <button class="deal-button">
                                 View Deal
