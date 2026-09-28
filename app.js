@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Check-out date must be after check-in date.");
             return;
         }
+        const checkInDate = new Date(checkIn);
+        const checkOutDate = new Date(checkOut);
+
+         const timeDifference = checkOutDate -      checkInDate;
+
+const nights = Math.ceil(
+    timeDifference / (1000 * 60 * 60 * 24)
+);
 
         const hotels = [
     {
