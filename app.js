@@ -30,61 +30,69 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Check-out date must be after check-in date.");
             return;
         }
+
         const checkInDate = new Date(checkIn);
         const checkOutDate = new Date(checkOut);
 
-         const timeDifference = checkOutDate -      checkInDate;
+        const timeDifference = checkOutDate - checkInDate;
 
-const nights = Math.ceil(
-    timeDifference / (1000 * 60 * 60 * 24)
-);
+        const nights = Math.ceil(
+            timeDifference / (1000 * 60 * 60 * 24)
+        );
 
         const hotels = [
-    {
-    name: "Grand Hotel",
-    rating: "8.5",
-    agoda: 180,
-    trip: 165,
-    agodaLink: "#",
-    tripLink: "#",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-},
-    {
-    name: "Bayview Hotel",
-    rating: "8.2",
-    agoda: 150,
-    trip: 142,
-    agodaLink: "#",
-    tripLink: "#",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
-},
-    {
-    name: "The Riverside Hotel",
-    rating: "8.8",
-    agoda: 220,
-    trip: 199,
-    agodaLink: "#",
-    tripLink: "#",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
-},
-    {
-    name: "City View Hotel",
-    rating: "7.9",
-    agoda: 130,
-    trip: 125,
-    agodaLink: "#",
-    tripLink: "#",
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
-},
-    {
-    name: "Luxury Garden Hotel",
-    rating: "9.1",
-    agoda: 280,
-    trip: 255,
-    agodaLink: "#",
-    tripLink: "#",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
-}
+
+            {
+                name: "Grand Hotel",
+                rating: "8.5",
+                agoda: 180,
+                trip: 165,
+                agodaLink: "#",
+                tripLink: "#",
+                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                name: "Bayview Hotel",
+                rating: "8.2",
+                agoda: 150,
+                trip: 142,
+                agodaLink: "#",
+                tripLink: "#",
+                image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                name: "The Riverside Hotel",
+                rating: "8.8",
+                agoda: 220,
+                trip: 199,
+                agodaLink: "#",
+                tripLink: "#",
+                image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                name: "City View Hotel",
+                rating: "7.9",
+                agoda: 130,
+                trip: 125,
+                agodaLink: "#",
+                tripLink: "#",
+                image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                name: "Luxury Garden Hotel",
+                rating: "9.1",
+                agoda: 280,
+                trip: 255,
+                agodaLink: "#",
+                tripLink: "#",
+                image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+            }
+
+        ];
 
         hotelResults.innerHTML = `
 
@@ -99,7 +107,7 @@ const nights = Math.ceil(
                 </p>
 
                 <p>
-                    ${guests} guest(s)
+                    ${guests} guest(s) · ${nights} night(s)
                 </p>
 
             </div>
@@ -112,15 +120,25 @@ const nights = Math.ceil(
 
             hotelCard.className = "hotel-card";
 
+            const agodaTotal = hotel.agoda * nights;
+            const tripTotal = hotel.trip * nights;
+
             hotelCard.innerHTML = `
 
                 <div class="hotel-image">
-    <img src="${hotel.image}" alt="${hotel.name}">
-</div>
+
+                    <img 
+                        src="${hotel.image}" 
+                        alt="${hotel.name}"
+                    >
+
+                </div>
 
                 <div class="hotel-info">
 
-                    <h3>${hotel.name} ${destination}</h3>
+                    <h3>
+                        ${hotel.name} ${destination}
+                    </h3>
 
                     <div class="rating">
                         ⭐ ${hotel.rating} · Excellent
@@ -136,17 +154,21 @@ const nights = Math.ceil(
 
                             <span>Agoda</span>
 
-                          <strong>RM ${hotel.agoda * nights}</strong>
+                            <strong>
+                                RM ${agodaTotal}
+                            </strong>
 
-<small>RM ${hotel.agoda} per night · ${nights} nights</small>
+                            <small>
+                                RM ${hotel.agoda} per night · ${nights} nights
+                            </small>
 
                             <a 
-    class="deal-button"
-    href="${hotel.agodaLink}"
-    target="_blank"
->
-    View Deal
-</a>
+                                class="deal-button"
+                                href="${hotel.agodaLink}"
+                                target="_blank"
+                            >
+                                View Deal
+                            </a>
 
                         </div>
 
@@ -154,19 +176,25 @@ const nights = Math.ceil(
 
                             <span>Trip.com</span>
 
-                            <strong>RM ${hotel.trip * nights}</strong>
+                            <strong>
+                                RM ${tripTotal}
+                            </strong>
 
-<small>RM ${hotel.trip} per night · ${nights} nights</small>
+                            <small>
+                                RM ${hotel.trip} per night · ${nights} nights
+                            </small>
 
                             <a 
-    class="deal-button"
-    href="${hotel.tripLink}"
-    target="_blank"
->
-    View Deal
-</a>
+                                class="deal-button"
+                                href="${hotel.tripLink}"
+                                target="_blank"
+                            >
+                                View Deal
+                            </a>
 
-                            <label>CHEAPER</label>
+                            <label>
+                                CHEAPER
+                            </label>
 
                         </div>
 
