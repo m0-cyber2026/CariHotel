@@ -113,7 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
         `;
-
+        
+        hotels.sort(function (a, b) {
+        return Math.min(a.agoda, a.trip) -            Math.min(b.agoda, b.trip);
+});
         hotels.forEach(function (hotel) {
 
             const hotelCard = document.createElement("div");
