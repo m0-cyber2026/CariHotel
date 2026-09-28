@@ -1,15 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchButton = document.getElementById("searchButton");
+
     const destinationInput = document.getElementById("destination");
+    const checkInInput = document.getElementById("checkIn");
+    const checkOutInput = document.getElementById("checkOut");
+    const guestsInput = document.getElementById("guests");
+
     const hotelResults = document.getElementById("hotelResults");
 
     searchButton.addEventListener("click", function () {
 
         const destination = destinationInput.value.trim();
+        const checkIn = checkInInput.value;
+        const checkOut = checkOutInput.value;
+        const guests = guestsInput.value;
 
         if (destination === "") {
             alert("Please enter a destination.");
+            return;
+        }
+
+        if (checkIn === "" || checkOut === "") {
+            alert("Please select check-in and check-out dates.");
+            return;
+        }
+
+        if (checkOut <= checkIn) {
+            alert("Check-out date must be after check-in date.");
             return;
         }
 
@@ -46,7 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         ];
 
-        hotelResults.innerHTML = "";
+        hotelResults.innerHTML = `
+
+            <div class="search-summary">
+
+                <p>
+                    <strong>${destination}</strong>
+                </p>
+
+                <p>
+                    ${checkIn} → ${checkOut}
+                </p>
+
+                <p>
+                    ${guests} guest(s)
+                </p>
+
+            </div>
+
+        `;
 
         hotels.forEach(function (hotel) {
 
@@ -87,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             </button>
 
                         </div>
-
 
                         <div class="booking-option cheapest">
 
