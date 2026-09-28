@@ -36,13 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="price-comparison">
 
                         <div class="booking-option">
+
                             <span>Agoda</span>
+
                             <strong>RM 180</strong>
+
                             <small>per night</small>
+
                             <button class="deal-button">
                                 View Deal
                             </button>
+
                         </div>
+
 
                         <div class="booking-option cheapest">
 
