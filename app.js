@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 agoda: 180,
                 trip: 165,
                 agodaLink: "#",
-                tripLink: "#",
+                tripLink: "https://www.trip.com/hotels/w/home?Allianceid=10771475&SID=332401175&trip_sub1=CariHotel&trip_sub3=D20003559",
                 image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
             },
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 agoda: 150,
                 trip: 142,
                 agodaLink: "#",
-                tripLink: "#",
+                tripLink: "https://www.trip.com/hotels/w/home?Allianceid=10771475&SID=332401175&trip_sub1=CariHotel&trip_sub3=D20003559",
                 image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
             },
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 agoda: 220,
                 trip: 199,
                 agodaLink: "#",
-                tripLink: "#",
+                tripLink: "https://www.trip.com/hotels/w/home?Allianceid=10771475&SID=332401175&trip_sub1=CariHotel&trip_sub3=D20003559",
                 image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
             },
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 agoda: 130,
                 trip: 125,
                 agodaLink: "#",
-                tripLink: "#",
+                tripLink: "https://www.trip.com/hotels/w/home?Allianceid=10771475&SID=332401175&trip_sub1=CariHotel&trip_sub3=D20003559",
                 image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
             },
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 agoda: 280,
                 trip: 255,
                 agodaLink: "#",
-                tripLink: "#",
+                tripLink: "https://www.trip.com/hotels/w/home?Allianceid=10771475&SID=332401175&trip_sub1=CariHotel&trip_sub3=D20003559",
                 image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
             }
 
