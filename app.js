@@ -41,41 +41,50 @@ const nights = Math.ceil(
 
         const hotels = [
     {
-        name: "Grand Hotel",
-        rating: "8.5",
-        agoda: "#",
-        trip: "#",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-    },
+    name: "Grand Hotel",
+    rating: "8.5",
+    agoda: 180,
+    trip: 165,
+    agodaLink: "#",
+    tripLink: "#",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+},
     {
-        name: "Bayview Hotel",
-        rating: "8.2",
-        agoda: "#",
-        trip: "#",
-        image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
-    },
+    name: "Bayview Hotel",
+    rating: "8.2",
+    agoda: 150,
+    trip: 142,
+    agodaLink: "#",
+    tripLink: "#",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+},
     {
-        name: "The Riverside Hotel",
-        rating: "8.8",
-        agoda: "#",
-        trip: "#",
-        image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
-    },
+    name: "The Riverside Hotel",
+    rating: "8.8",
+    agoda: 220,
+    trip: 199,
+    agodaLink: "#",
+    tripLink: "#",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+},
     {
-        name: "City View Hotel",
-        rating: "7.9",
-        agoda: "#",
-        trip: "#",
-        image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
-    },
+    name: "City View Hotel",
+    rating: "7.9",
+    agoda: 130,
+    trip: 125,
+    agodaLink: "#",
+    tripLink: "#",
+    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+},
     {
-        name: "Luxury Garden Hotel",
-        rating: "9.1",
-        agoda: "#",
-        trip: "#",
-        image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
-    }
-];
+    name: "Luxury Garden Hotel",
+    rating: "9.1",
+    agoda: 280,
+    trip: 255,
+    agodaLink: "#",
+    tripLink: "#",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+}
 
         hotelResults.innerHTML = `
 
