@@ -127,9 +127,9 @@ const nights = Math.ceil(
 
                             <span>Agoda</span>
 
-                            <strong>RM ${hotel.agoda}</strong>
+                          <strong>RM ${hotel.agoda * nights}</strong>
 
-                            <small>per night</small>
+<small>RM ${hotel.agoda} per night · ${nights} nights</small>
 
                             <button class="deal-button">
                                 View Deal
