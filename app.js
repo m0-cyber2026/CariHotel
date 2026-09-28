@@ -123,6 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const agodaTotal = hotel.agoda * nights;
             const tripTotal = hotel.trip * nights;
 
+            const agodaIsCheaper = agodaTotal < tripTotal;
+            const tripIsCheaper = tripTotal < agodaTotal;
+
             hotelCard.innerHTML = `
 
                 <div class="hotel-image">
@@ -150,68 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="price-comparison">
 
-                        <div class="booking-option">
+                        <div class="booking-option ${agodaIsCheaper ? "cheapest" : ""}">
 
-                            <span>Agoda</span>
-
-                            <strong>
-                                RM ${agodaTotal}
-                            </strong>
-
-                            <small>
-                                RM ${hotel.agoda} per night · ${nights} nights
-                            </small>
-
-                            <a 
-                                class="deal-button"
-                                href="${hotel.agodaLink}"
-                                target="_blank"
-                            >
-                                View Deal
-                            </a>
-
-                        </div>
-
-                        <div class="booking-option cheapest">
-
-                            <span>Trip.com</span>
-
-                            <strong>
-                                RM ${tripTotal}
-                            </strong>
-
-                            <small>
-                                RM ${hotel.trip} per night · ${nights} nights
-                            </small>
-
-                            <a 
-                                class="deal-button"
-                                href="${hotel.tripLink}"
-                                target="_blank"
-                            >
-                                View Deal
-                            </a>
-
-                            <label>
-                                CHEAPER
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            `;
-
-            hotelResults.appendChild(hotelCard);
-
-        });
-
-        document.getElementById("resultsSection").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
-});
+                            <span>Ag
