@@ -121,6 +121,7 @@ nav a:hover {
 
 .search-box {
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
 
     background: #ffffff;
@@ -138,8 +139,7 @@ nav a:hover {
 
     gap: 5px;
 
-    box-shadow:
-        0 15px 40px rgba(15, 23, 42, 0.13);
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.13);
 
     text-align: left;
 }
@@ -177,6 +177,7 @@ nav a:hover {
 
 .search-field input {
     width: 100%;
+    min-width: 0;
 
     border: none;
     outline: none;
@@ -247,11 +248,11 @@ nav a:hover {
 
 .results-section {
     padding: 70px 7% 80px;
-
     background: #f8fafc;
 }
 
 .results-container {
+    width: 100%;
     max-width: 1050px;
     margin: 0 auto;
 }
@@ -285,6 +286,8 @@ nav a:hover {
 ========================= */
 
 .empty-results {
+    width: 100%;
+
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
@@ -336,15 +339,18 @@ nav a:hover {
 ========================= */
 
 .search-summary {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto 22px;
+
+    padding: 18px 22px;
+
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
 
     border-radius: 18px;
-
-    padding: 18px 22px;
-
-    margin-bottom: 22px;
 
     display: grid;
 
@@ -368,9 +374,9 @@ nav a:hover {
 .search-summary p:first-child {
     font-size: 21px;
 
-    font-weight: 800;
-
     color: #172554;
+
+    font-weight: 800;
 }
 
 .search-summary p:nth-child(2),
@@ -394,6 +400,11 @@ nav a:hover {
 ========================= */
 
 .hotel-card {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto 22px;
+
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
@@ -404,9 +415,7 @@ nav a:hover {
 
     display: grid;
 
-    grid-template-columns: 300px 1fr;
-
-    margin-bottom: 22px;
+    grid-template-columns: 300px minmax(0, 1fr);
 
     box-shadow:
         0 8px 25px rgba(15, 23, 42, 0.07);
@@ -427,9 +436,9 @@ nav a:hover {
 .hotel-image {
     min-height: 280px;
 
-    overflow: hidden;
-
     background: #e0f2fe;
+
+    overflow: hidden;
 }
 
 .hotel-image img {
@@ -450,9 +459,11 @@ nav a:hover {
 }
 
 
-/* HOTEL INFORMATION */
+/* HOTEL INFO */
 
 .hotel-info {
+    min-width: 0;
+
     padding: 25px;
 }
 
@@ -487,14 +498,19 @@ nav a:hover {
 ========================= */
 
 .price-comparison {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 12px;
 }
 
 .booking-option {
+    min-width: 0;
+
     position: relative;
 
     background: #f8fafc;
@@ -541,6 +557,8 @@ nav a:hover {
     font-size: 11px;
 
     margin-bottom: 12px;
+
+    min-height: 30px;
 }
 
 
@@ -573,11 +591,15 @@ nav a:hover {
 /* DEAL BUTTON */
 
 .deal-button {
-    display: block;
+    display: flex;
 
     width: 100%;
+    min-height: 38px;
 
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px;
 
     background: #0ea5e9;
     color: #ffffff;
@@ -590,7 +612,7 @@ nav a:hover {
     font-size: 12px;
     font-weight: 700;
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .deal-button:hover {
@@ -628,6 +650,7 @@ nav a:hover {
 }
 
 .feature-grid {
+    width: 100%;
     max-width: 1050px;
 
     margin: 0 auto;
@@ -635,26 +658,27 @@ nav a:hover {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 18px;
 }
 
 .feature-card {
-    background: #ffffff;
+    min-width: 0;
+    min-height: 205px;
+
+    padding: 28px 22px;
 
     border: 1px solid #e2e8f0;
 
     border-radius: 18px;
 
-    padding: 28px 22px;
-
-    min-height: 210px;
+    background: #ffffff;
 
     box-shadow:
         0 5px 18px rgba(15, 23, 42, 0.04);
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .feature-card:hover {
@@ -682,9 +706,9 @@ nav a:hover {
 }
 
 .feature-card h3 {
-    color: #172554;
-
     font-size: 18px;
+
+    color: #172554;
 
     margin-bottom: 8px;
 }
@@ -728,6 +752,7 @@ nav a:hover {
 }
 
 .destination-grid {
+    width: 100%;
     max-width: 1050px;
 
     margin: 0 auto;
@@ -735,12 +760,15 @@ nav a:hover {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4, minmax(0, 1fr));
 
     gap: 18px;
 }
 
 .destination-card {
+    min-width: 0;
+    min-height: 150px;
+
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
@@ -748,8 +776,6 @@ nav a:hover {
     border-radius: 18px;
 
     padding: 28px 15px;
-
-    min-height: 150px;
 
     display: flex;
 
@@ -759,10 +785,9 @@ nav a:hover {
 
     justify-content: center;
 
-    box-shadow:
-        0 5px 18px rgba(15, 23, 42, 0.04);
+    transition: 0.2s ease;
 
-    transition: 0.2s;
+    cursor: pointer;
 }
 
 .destination-card:hover {
@@ -773,17 +798,19 @@ nav a:hover {
 }
 
 .destination-card div {
-    font-size: 34px;
+    font-size: 36px;
 
     margin-bottom: 10px;
 }
 
 .destination-card strong {
+    display: block;
+
     color: #172554;
 
     font-size: 16px;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 .destination-card span {
@@ -841,10 +868,14 @@ footer p {
     font-size: 12px;
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.12);
+.footer-links a:hover {
+    color: #38bdf8;
+}
 
-    padding-top: 18px;
+.footer-bottom {
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
 
     color: #94a3b8;
 
@@ -859,14 +890,12 @@ footer p {
 @media (max-width: 900px) {
 
     .search-box {
-        grid-template-columns:
-            1fr 1fr;
-
-        padding: 12px;
+        grid-template-columns: 1fr 1fr;
     }
 
     .search-field {
         border-right: none;
+
         border-bottom: 1px solid #e2e8f0;
     }
 
@@ -875,7 +904,7 @@ footer p {
     }
 
     .hotel-card {
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 240px minmax(0, 1fr);
     }
 
     .destination-grid {
@@ -951,15 +980,7 @@ footer p {
 
 
     .results-section {
-        padding: 55px 5px;
-    }
-
-    .results-container {
-        width: 100%;
-    }
-
-    .results-title {
-        padding: 0 5%;
+        padding: 55px 5%;
     }
 
     .results-title h2 {
@@ -968,8 +989,6 @@ footer p {
 
 
     .search-summary {
-        margin: 0 5% 20px;
-
         display: flex;
 
         flex-direction: column;
@@ -983,8 +1002,6 @@ footer p {
 
 
     .hotel-card {
-        margin: 0 5% 20px;
-
         display: block;
     }
 
@@ -1027,7 +1044,7 @@ footer p {
 
 
     .destination-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
