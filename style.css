@@ -228,6 +228,9 @@ footer {
 }
 
 .deal-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
     width: 100%;
     padding: 10px;
     background: #0077ff;
