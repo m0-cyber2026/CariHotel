@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f7f9fc;
-    color: #1f2937;
+    background: #f8fafc;
+    color: #172554;
 }
 
 
@@ -18,10 +18,13 @@ body {
 header {
     background: white;
     padding: 18px 7%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+
     position: relative;
     z-index: 10;
 }
@@ -32,16 +35,21 @@ header {
     color: #172554;
 }
 
-.logo span {
+.logo span,
+.footer-logo span {
     color: #0ea5e9;
 }
 
 nav a {
     text-decoration: none;
     color: #334155;
+
     margin-left: 28px;
+
     font-size: 15px;
     font-weight: 600;
+
+    transition: 0.2s;
 }
 
 nav a:hover {
@@ -54,25 +62,26 @@ nav a:hover {
 ========================= */
 
 .hero {
-    min-height: 520px;
-    padding: 80px 7% 100px;
+    min-height: 570px;
+
+    padding: 80px 7% 110px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(14,165,233,0.20),
+            circle at 12% 20%,
+            rgba(14, 165, 233, 0.20),
             transparent 30%
         ),
         radial-gradient(
-            circle at 85% 25%,
-            rgba(250,204,21,0.25),
+            circle at 88% 25%,
+            rgba(250, 204, 21, 0.22),
             transparent 28%
         ),
         linear-gradient(
@@ -83,21 +92,52 @@ nav a:hover {
         );
 }
 
-.hero h1 {
-    font-size: 52px;
-    line-height: 1.1;
+.hero-badge {
+    display: inline-block;
 
-    margin-bottom: 18px;
+    background: white;
 
-    color: #172554;
-    font-weight: 800;
+    color: #0369a1;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.08);
+
+    margin-bottom: 22px;
 }
 
-.hero p {
-    font-size: 19px;
+.hero h1 {
+    font-size: 58px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    color: #172554;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #0ea5e9;
+}
+
+.hero > p {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
     color: #64748b;
 
-    margin-bottom: 38px;
+    margin-bottom: 35px;
 }
 
 
@@ -106,62 +146,99 @@ nav a:hover {
 ========================= */
 
 .search-box {
+    width: 100%;
+    max-width: 1100px;
+
     background: white;
 
     padding: 12px;
 
-    border-radius: 18px;
-
-    box-shadow:
-        0 15px 40px rgba(15,23,42,0.15);
+    border-radius: 20px;
 
     display: flex;
+    align-items: stretch;
+
+    gap: 6px;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.15);
+
+    text-align: left;
+}
+
+.search-field {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
     gap: 10px;
 
+    padding: 12px 14px;
+
+    border-right: 1px solid #e2e8f0;
+}
+
+.search-icon {
+    font-size: 20px;
+}
+
+.search-field label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    color: #64748b;
+
+    margin-bottom: 4px;
+
+    text-transform: uppercase;
+}
+
+.search-field input {
     width: 100%;
-    max-width: 1000px;
-}
 
-.search-box input,
-.search-box button {
-    padding: 16px;
-
-    border-radius: 11px;
-
-    border: 1px solid #e2e8f0;
-
-    font-size: 14px;
-}
-
-.search-box input {
-    flex: 1;
+    border: none;
 
     outline: none;
 
-    background: #f8fafc;
+    background: transparent;
+
+    color: #172554;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
-.search-box input:focus {
-    border-color: #0ea5e9;
-    background: white;
+.search-field input::placeholder {
+    color: #94a3b8;
 }
 
 .search-box button {
-    min-width: 130px;
+    border: none;
 
     background: #0ea5e9;
 
     color: white;
 
-    border: none;
+    border-radius: 13px;
 
-    cursor: pointer;
+    padding: 0 24px;
+
+    min-width: 155px;
+
+    font-size: 14px;
 
     font-weight: 800;
 
-    letter-spacing: 0.5px;
+    cursor: pointer;
 
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
 .search-box button:hover {
@@ -170,27 +247,112 @@ nav a:hover {
     transform: translateY(-1px);
 }
 
+.hero-note {
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    font-weight: 600;
+}
+
 
 /* =========================
-   RESULTS SECTION
+   RESULTS
 ========================= */
 
 .section {
-    padding: 65px 7% 80px;
-
-    text-align: center;
+    padding: 70px 7% 80px;
 
     background: #f8fafc;
+}
+
+.results-heading {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    text-align: left;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: #0284c7;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
 }
 
 .section h2 {
     font-size: 34px;
 
-    margin-bottom: 25px;
-
     color: #172554;
 
     font-weight: 800;
+}
+
+
+/* =========================
+   EMPTY RESULTS
+========================= */
+
+.empty-results {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 55px 25px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e0f2fe;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+}
+
+.empty-results h3 {
+    font-size: 21px;
+
+    color: #172554;
+
+    margin-bottom: 8px;
+}
+
+.empty-results p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
 }
 
 
@@ -212,7 +374,7 @@ nav a:hover {
     border-radius: 18px;
 
     box-shadow:
-        0 8px 25px rgba(15,23,42,0.06);
+        0 8px 25px rgba(15, 23, 42, 0.06);
 
     display: flex;
 
@@ -227,18 +389,13 @@ nav a:hover {
     position: relative;
 }
 
-
-/* Blue accent */
-
 .search-summary::before {
     content: "";
 
     position: absolute;
 
     left: 0;
-
     top: 15px;
-
     bottom: 15px;
 
     width: 5px;
@@ -248,9 +405,6 @@ nav a:hover {
     border-radius: 0 5px 5px 0;
 }
 
-
-/* Destination */
-
 .search-summary p:first-child {
     font-size: 22px;
 
@@ -258,13 +412,8 @@ nav a:hover {
 
     font-weight: 800;
 
-    margin: 0;
-
     padding-left: 8px;
 }
-
-
-/* Date */
 
 .search-summary p:nth-child(2) {
     font-size: 14px;
@@ -277,13 +426,8 @@ nav a:hover {
 
     border-radius: 10px;
 
-    margin: 0;
-
     white-space: nowrap;
 }
-
-
-/* Guests and nights */
 
 .search-summary p:nth-child(3) {
     font-size: 14px;
@@ -295,8 +439,6 @@ nav a:hover {
     padding: 9px 14px;
 
     border-radius: 10px;
-
-    margin: 0;
 
     white-space: nowrap;
 }
@@ -317,21 +459,21 @@ nav a:hover {
 
     overflow: hidden;
 
-    box-shadow:
-        0 10px 30px rgba(15,23,42,0.08);
-
     display: flex;
 
     text-align: left;
 
-    transition: 0.2s ease;
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition: 0.25s ease;
 }
 
 .hotel-card:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 16px 38px rgba(15,23,42,0.12);
+        0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
 
@@ -346,18 +488,15 @@ nav a:hover {
 
     background: #e0f2fe;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hotel-image img {
     width: 100%;
-
     height: 100%;
 
     min-height: 280px;
@@ -375,7 +514,7 @@ nav a:hover {
 
 
 /* =========================
-   HOTEL INFORMATION
+   HOTEL INFO
 ========================= */
 
 .hotel-info {
@@ -397,7 +536,7 @@ nav a:hover {
 
     margin-bottom: 10px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .location {
@@ -467,7 +606,7 @@ nav a:hover {
 
 
 /* =========================
-   CHEAPEST DEAL
+   CHEAPEST
 ========================= */
 
 .cheapest {
@@ -480,7 +619,6 @@ nav a:hover {
     position: absolute;
 
     top: 10px;
-
     right: 10px;
 
     background: #f59e0b;
@@ -504,23 +642,19 @@ nav a:hover {
 .deal-button {
     display: block;
 
-    text-align: center;
-
-    text-decoration: none;
-
     width: 100%;
 
     padding: 11px;
+
+    text-align: center;
+
+    text-decoration: none;
 
     background: #0ea5e9;
 
     color: white;
 
-    border: none;
-
     border-radius: 9px;
-
-    cursor: pointer;
 
     font-weight: 700;
 
@@ -535,6 +669,169 @@ nav a:hover {
 
 
 /* =========================
+   WHY CARIHOTEL
+========================= */
+
+.why-section {
+    padding: 80px 7%;
+
+    background: white;
+
+    text-align: center;
+}
+
+.why-section h2 {
+    font-size: 34px;
+
+    color: #172554;
+
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 30px 25px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e0f2fe;
+
+    border-radius: 16px;
+
+    font-size: 27px;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+
+    color: #172554;
+
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   DESTINATIONS
+========================= */
+
+.destination-section {
+    padding: 80px 7%;
+
+    background: #f8fafc;
+
+    text-align: center;
+}
+
+.destination-section h2 {
+    font-size: 34px;
+
+    color: #172554;
+
+    margin-bottom: 35px;
+}
+
+.destination-grid {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.destination-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    padding: 28px 15px;
+
+    transition: 0.2s ease;
+
+    cursor: pointer;
+}
+
+.destination-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.destination-card div {
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.destination-card strong {
+    display: block;
+
+    color: #172554;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.destination-card span {
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -545,13 +842,57 @@ footer {
 
     text-align: center;
 
-    padding: 30px;
+    padding: 45px 7% 25px;
 
-    margin-top: 50px;
+    margin-top: 0;
+}
+
+.footer-logo {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
 }
 
 footer p {
     color: #cbd5e1;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    color: #94a3b8;
+
+    font-size: 12px;
 }
 
 
@@ -559,7 +900,7 @@ footer p {
    MOBILE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     header {
         padding: 17px 5%;
@@ -575,16 +916,16 @@ footer p {
 
 
     .hero {
-        min-height: 500px;
+        min-height: auto;
 
-        padding: 65px 5%;
+        padding: 65px 5% 75px;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 42px;
     }
 
-    .hero p {
+    .hero > p {
         font-size: 16px;
     }
 
@@ -592,51 +933,52 @@ footer p {
     .search-box {
         flex-direction: column;
 
-        padding: 15px;
+        padding: 14px;
+
+        gap: 4px;
     }
 
-    .search-box input,
+    .search-field {
+        border-right: none;
+
+        border-bottom: 1px solid #e2e8f0;
+
+        padding: 14px 10px;
+    }
+
     .search-box button {
-        width: 100%;
+        min-height: 52px;
+
+        margin-top: 5px;
     }
 
 
     .section {
-        padding: 50px 5%;
+        padding: 55px 5%;
     }
 
-    .section h2 {
-        font-size: 28px;
-    }
-
-
-    /* Search summary mobile */
 
     .search-summary {
         flex-direction: column;
 
         align-items: stretch;
 
-        gap: 10px;
-
         padding: 20px;
+
+        gap: 10px;
     }
 
     .search-summary p:first-child {
         font-size: 21px;
-
-        padding-left: 8px;
     }
 
     .search-summary p:nth-child(2),
     .search-summary p:nth-child(3) {
-        width: 100%;
-
         text-align: center;
+
+        white-space: normal;
     }
 
-
-    /* Hotel card mobile */
 
     .hotel-card {
         display: block;
@@ -647,13 +989,12 @@ footer p {
     .hotel-image {
         width: 100%;
 
-        min-height: 200px;
+        min-height: 210px;
     }
 
     .hotel-image img {
-        min-height: 200px;
+        min-height: 210px;
     }
-
 
     .hotel-info {
         padding: 20px;
@@ -663,9 +1004,48 @@ footer p {
         font-size: 22px;
     }
 
-
     .price-comparison {
         flex-direction: column;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section,
+    .destination-section {
+        padding: 60px 5%;
+    }
+
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
     }
 
 }
