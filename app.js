@@ -13,9 +13,48 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        hotelResults.innerHTML = `
+        const hotels = [
+            {
+                name: "Grand Hotel",
+                rating: "8.5",
+                agoda: "180",
+                trip: "165"
+            },
+            {
+                name: "Bayview Hotel",
+                rating: "8.2",
+                agoda: "150",
+                trip: "142"
+            },
+            {
+                name: "The Riverside Hotel",
+                rating: "8.8",
+                agoda: "220",
+                trip: "199"
+            },
+            {
+                name: "City View Hotel",
+                rating: "7.9",
+                agoda: "130",
+                trip: "125"
+            },
+            {
+                name: "Luxury Garden Hotel",
+                rating: "9.1",
+                agoda: "280",
+                trip: "255"
+            }
+        ];
 
-            <div class="hotel-card">
+        hotelResults.innerHTML = "";
+
+        hotels.forEach(function (hotel) {
+
+            const hotelCard = document.createElement("div");
+
+            hotelCard.className = "hotel-card";
+
+            hotelCard.innerHTML = `
 
                 <div class="hotel-image">
                     🏨
@@ -23,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="hotel-info">
 
-                    <h3>Grand Hotel ${destination}</h3>
+                    <h3>${hotel.name} ${destination}</h3>
 
                     <div class="rating">
-                        ⭐ 8.5 · Excellent
+                        ⭐ ${hotel.rating} · Excellent
                     </div>
 
                     <p class="location">
@@ -39,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <span>Agoda</span>
 
-                            <strong>RM 180</strong>
+                            <strong>RM ${hotel.agoda}</strong>
 
                             <small>per night</small>
 
@@ -54,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <span>Trip.com</span>
 
-                            <strong>RM 165</strong>
+                            <strong>RM ${hotel.trip}</strong>
 
                             <small>per night</small>
 
@@ -70,9 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 </div>
 
-            </div>
+            `;
 
-        `;
+            hotelResults.appendChild(hotelCard);
+
+        });
 
         document.getElementById("resultsSection").scrollIntoView({
             behavior: "smooth"
