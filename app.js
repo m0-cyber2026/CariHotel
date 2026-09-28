@@ -149,9 +149,13 @@ const nights = Math.ceil(
 
 <small>RM ${hotel.trip} per night · ${nights} nights</small>
 
-                            <button class="deal-button">
-                                View Deal
-                            </button>
+                            <a 
+    class="deal-button"
+    href="${hotel.tripLink}"
+    target="_blank"
+>
+    View Deal
+</a>
 
                             <label>CHEAPER</label>
 
