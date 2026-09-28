@@ -1,3 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("CariHotel is ready!");
-});
+
+    const searchButton = document.getElementById("searchButton");
+
+    searchButton.addEventListener("click", function () {
+
+        alert("Hotel search is coming soon!");
+
+    });
+
+}); 
