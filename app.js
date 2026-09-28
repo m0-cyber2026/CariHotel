@@ -14,23 +14,58 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         hotelResults.innerHTML = `
+
             <div class="hotel-card">
 
-                <h3>Hotels in ${destination}</h3>
-
-                <p>
-                    Hotel search results for ${destination} will appear here.
-                </p>
-
-                <div class="price">
-                    Agoda: Checking price...
+                <div class="hotel-image">
+                    🏨
                 </div>
 
-                <div class="price">
-                    Trip.com: Checking price...
+                <div class="hotel-info">
+
+                    <h3>Grand Hotel ${destination}</h3>
+
+                    <div class="rating">
+                        ⭐ 8.5 · Excellent
+                    </div>
+
+                    <p class="location">
+                        📍 ${destination}
+                    </p>
+
+                    <div class="price-comparison">
+
+                        <div class="booking-option">
+                            <span>Agoda</span>
+                            <strong>RM 180</strong>
+                            <small>per night</small>
+                            <button class="deal-button">
+                                View Deal
+                            </button>
+                        </div>
+
+                        <div class="booking-option cheapest">
+
+                            <span>Trip.com</span>
+
+                            <strong>RM 165</strong>
+
+                            <small>per night</small>
+
+                            <button class="deal-button">
+                                View Deal
+                            </button>
+
+                            <label>CHEAPER</label>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
+
         `;
 
         document.getElementById("resultsSection").scrollIntoView({
